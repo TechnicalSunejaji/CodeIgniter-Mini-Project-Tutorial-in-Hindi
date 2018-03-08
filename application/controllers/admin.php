@@ -2,10 +2,14 @@
 
 class admin extends MY_controller
 {
+  public function __construct()
+  {
+    parent::__construct();
+    if(! $this->session->userdata('id'))
+    return redirect('admin/login');
+  }
 public function login()
  {
-
-  
   $this->form_validation->set_rules('uname','User Name','required|alpha');
   $this->form_validation->set_rules('pass','Password','required|max_length[12]');
 $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
@@ -17,7 +21,6 @@ $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div
    $login_id=$this->loginmodel->isvalidate($uname,$pass);
    if($login_id)
    {
-       
        $this->session->set_userdata('id',$login_id);
        return redirect('admin/welcome');
   }
@@ -36,9 +39,22 @@ $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div
  }
  public function welcome()
  {
+    
   $this->load->model('loginmodel','ar');
   $articles=$this->ar->articleList();
   $this->load->view('admin/dashboard',['articles'=>$articles]);
+ }
+ public function adduser()
+ {
+
+ }
+ public function edituser()
+ {
+
+ }
+ public function deluser()
+ {
+
  }
  public function register()
  {
