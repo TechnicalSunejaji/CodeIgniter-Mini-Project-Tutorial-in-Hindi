@@ -19,7 +19,8 @@ $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div
   }
    else
    {
-      echo "Details not matched";
+      $this->session->set_flashdata('Login_failed','Invalid Username/Password');
+      return redirect('login');
    }
 
 
