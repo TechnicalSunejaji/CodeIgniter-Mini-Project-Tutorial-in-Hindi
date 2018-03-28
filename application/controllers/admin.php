@@ -13,7 +13,9 @@ class admin extends MY_controller
 
  public function adduser()
  {
-
+    
+   $this->load->view('admin/add_article');
+   $this->input->post();
  }
  public function edituser()
  {
