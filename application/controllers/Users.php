@@ -5,6 +5,10 @@ class Users extends MY_controller
  {
   $this->load->view('Users/articleList');
  }
+ public function register()
+ {
+  $this->load->view('admin/register');
+ }
  public function sendemail()
  {
   

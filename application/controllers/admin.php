@@ -15,8 +15,22 @@ class admin extends MY_controller
  {
     
    $this->load->view('admin/add_article');
-   $this->input->post();
+  
  }
+ public function userValidation()
+ {
+
+  if($this->form_validation->run('add_article_rules'))
+  {
+   echo "ok";
+  }
+  else
+  {
+   $this->load->view('admin/add_article');
+  }
+
+ }
+ 
  public function edituser()
  {
 
@@ -38,42 +52,8 @@ class admin extends MY_controller
     $this->session->unset_userdata('id');
     return redirect('login');
   }
- public function register()
- {
-  $this->load->view('admin/register');
- }
-public function sendemail()
- {
-  
-  $this->form_validation->set_rules('uname','User Name','required|alpha');
-  $this->form_validation->set_rules('pass','Password','required|max_length[12]');
-  $this->form_validation->set_rules('fname','First Name','required|alpha');
-  $this->form_validation->set_rules('lname','last Name','required|alpha');
-  $this->form_validation->set_rules('email','Email','required|valid_email|is_unique[users.email]');
-$this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
-  if($this->form_validation->run())
-  {
-    $this->load->library('email');
-  
-    $this->email->from(set_value('email'),set_value('fname'));
-    $this->email->to("ajay.suneja1993@gmail.com");
-    $this->email->subject("Registratiion Greeting..");
+ 
 
-    $this->email->message("Thank  You for Registratiion");
-    $this->email->set_newline("\r\n");
-    $this->email->send();
-
-     if (!$this->email->send()) {
-    show_error($this->email->print_debugger()); }
-  else {
-    echo "Your e-mail has been sent!";
-  }
-  }
-  else
-  {
-   $this->load->view('Admin/register');
-  }
- }
 	
 }
 

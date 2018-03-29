@@ -40,7 +40,7 @@
    </div>
   <?php  echo form_submit(['type'=>'submit','class'=>'btn btn-default','value'=>'Submit']);  ?>
  <?php  echo form_reset(['type'=>'reset','class'=>'btn btn-primary','value'=>'Reset']);  ?>
- <?php echo anchor('admin/register/', 'Sign up?', 'class="link-class"') ?>
+ <?php echo anchor('users/register', 'Sign up?', 'class="link-class"') ?>
 </div>
 
 <?php include('footer.php'); ?>

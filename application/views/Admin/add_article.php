@@ -2,8 +2,8 @@
 
 <div class="container" style="margin-top:20px;">
 <h1>Add Articles</h1>
-<?php  echo form_hidden('user_id','$this->session->userdata('id')');  ?>
- <?php echo form_open(''); ?>
+
+ <?php echo form_open('admin/userValidation'); ?>
 
  <div class="row">
  <div class="col-lg-6">

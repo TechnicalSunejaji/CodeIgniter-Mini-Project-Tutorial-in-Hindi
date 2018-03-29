@@ -2,7 +2,7 @@
 
 <div class="container" style="margin-top:20px;">
 <h1>Register Form</h1>
- <?php echo form_open('admin/sendemail'); ?>
+ <?php echo form_open('login/sendemail'); ?>
  <div class="row">
  <div class="col-lg-6">
   <div class="form-group">

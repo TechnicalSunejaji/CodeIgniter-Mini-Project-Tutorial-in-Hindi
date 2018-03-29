@@ -2,7 +2,7 @@
 
 <div class="container" style="margin-top:50px;"">
 <div class="row">
-<a href="adduser" class="btn btn-lg btn-primary">Add Articles</a>
+<?=   anchor('admin/adduser','Add Articles',['class'=>'btn btn-lg btn-primary'])  ?>
 </div>
 
 </div>
