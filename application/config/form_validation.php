@@ -3,12 +3,12 @@ $config=[
 
        'add_article_rules'=>[
                          [
-                          'field' => 'title',
+                          'field' => 'article_title',
                           'label' => 'Article Title',
                           'rules' => 'required|alpha'
                           ],
                           [
-                          'field' => 'body',
+                          'field' => 'article_body',
                           'label' => 'Article Body',
                           'rules' => 'required|alpha'
                           ]
