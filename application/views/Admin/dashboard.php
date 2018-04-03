@@ -5,10 +5,28 @@
 <?=   anchor('admin/adduser','Add Articles',['class'=>'btn btn-lg btn-primary'])  ?>
 </div>
 
-</div>
+
 
 
 <div class="container" style="margin-top:50px;">
+<?php  if($msg=$this->session->flashdata('msg')): 
+
+$msg_class=$this->session->flashdata('msg_class')
+
+ ?>
+<div class="row">
+<div class="col-lg-6">
+<div class="alert <?= $msg_class ?>">
+<?= $msg; ?>
+</div>
+</div>
+</div>
+
+<?php endif; ?>
+
+</div>
+
+
 <div class="table">
 <table>
 <thead>

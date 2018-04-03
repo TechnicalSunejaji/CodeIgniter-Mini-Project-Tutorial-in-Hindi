@@ -26,13 +26,15 @@ class admin extends MY_controller
       $this->load->model('loginmodel','useradd');
       if($this->useradd->add_articles($post))
       {
-        //
-     echo "Insert successfully";
+         $this->session->set_flashdata('msg','Articles added successfully');
+          $this->session->set_flashdata('msg_class','alert-success');
       }
       else
       {
-        echo "Not Insert";
+         $this->session->set_flashdata('msg','Articles not added Please try again!!');
+         $this->session->set_flashdata('msg_class','alert-danger');
       }
+      return redirect('admin/welcome');
 }
   else
   {

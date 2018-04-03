@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 08, 2018 at 03:35 PM
+-- Generation Time: Apr 03, 2018 at 02:16 PM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.16
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `article_body` longtext NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `articles`
@@ -41,8 +41,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
 
 INSERT INTO `articles` (`id`, `article_title`, `article_body`, `user_id`) VALUES
 (1, 'Demo Article ', 'testing', 1),
-(2, 'Demo testing', 'dfdsfdsf', 1),
-(3, 'demo', 'akjkdfjaskdj', 1);
+(2, 'Demo testing', 'dfdsfdsf', 1);
 
 -- --------------------------------------------------------
 
@@ -59,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `lastname` varchar(150) NOT NULL,
   `email` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`

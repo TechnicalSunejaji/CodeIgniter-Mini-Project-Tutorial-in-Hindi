@@ -33,7 +33,11 @@ class loginmodel extends CI_Model
   {
      return $this->db->insert('articles',$array);
   }
-
+  public function add_user($array)
+  {
+    
+    return $this->db->insert('users',$array);
+  }
 
 
 
