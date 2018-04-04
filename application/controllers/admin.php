@@ -47,9 +47,22 @@ class admin extends MY_controller
  {
 
  }
- public function deluser()
+ public function delarticles()
  {
-
+   $id=$this->input->post('id');
+  
+    $this->load->model('loginmodel','delarticle');
+      if($this->delarticle->del($id))
+      {
+          $this->session->set_flashdata('msg','Delete Successfully');
+          $this->session->set_flashdata('msg_class','alert-success');
+      }
+      else
+      {
+         $this->session->set_flashdata('msg','Please try again..not delete');
+         $this->session->set_flashdata('msg_class','alert-danger');
+      }
+      return redirect('admin/welcome');
 
  }
  public function __construct()

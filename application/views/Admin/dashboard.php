@@ -31,7 +31,7 @@ $msg_class=$this->session->flashdata('msg_class')
 <table>
 <thead>
 <tr>
-<th>ID</th>
+
 <th>Article Title</th>
 <th>Edit</th>
 <th>Delete</th>
@@ -41,10 +41,20 @@ $msg_class=$this->session->flashdata('msg_class')
 <?php if(count($articles)): ?> 
 <?php foreach ($articles as $art): ?>
 <tr>
-		<td>1</td>
+	
 		<td><?=  $art->article_title; ?></td>
 		<td><a href="#" class="btn btn-primary">Edit</a></td>
-		<td><a href="#" class="btn btn-danger">Delete</a></td>
+		<td>
+        <?=
+        form_open('admin/delarticles'),
+        form_hidden('id',$art->id),
+        form_submit(['name'=>'submit','value'=>'Delete','class'=>'btn btn-danger']),
+        form_close();
+
+
+
+        ?>
+      </td>
 	</tr>
 	<?php endforeach; ?>
 <?php else: ?>

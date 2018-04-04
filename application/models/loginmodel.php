@@ -23,7 +23,7 @@ class loginmodel extends CI_Model
   {
 
     $id=$this->session->userdata('id');
-   $q=$this->db->select('article_title')
+   $q=$this->db->select()
             ->from('articles')
             ->where(['user_id'=>$id])
             ->get();
@@ -39,8 +39,14 @@ class loginmodel extends CI_Model
     return $this->db->insert('users',$array);
   }
 
+  public function del($id)
+  {
+  return $this->db->delete('articles',['id'=>$id]);
 
 
+  // return  $this->db->delete('articles')
+  //           ->where(['id'=>$id]);
+  }
 
 
 
