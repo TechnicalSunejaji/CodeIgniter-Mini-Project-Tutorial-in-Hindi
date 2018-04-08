@@ -31,8 +31,9 @@ $msg_class=$this->session->flashdata('msg_class')
 <table>
 <thead>
 <tr>
-
+<th>S.no</th>
 <th>Article Title</th>
+<th>Article Body</th>
 <th>Edit</th>
 <th>Delete</th>
 </tr>
@@ -41,8 +42,10 @@ $msg_class=$this->session->flashdata('msg_class')
 <?php if(count($articles)): ?> 
 <?php foreach ($articles as $art): ?>
 <tr>
-	
+	   
 		<td><?=  $art->article_title; ?></td>
+		<td><?=  $art->article_body; ?></td>
+		
 		<td><a href="#" class="btn btn-primary">Edit</a></td>
 		<td>
         <?=
@@ -63,6 +66,10 @@ $msg_class=$this->session->flashdata('msg_class')
 	</tr>
    <?php endif; ?>
 </tbody>
+
+<?=  $this->pagination->create_links();   ?>
+
+
 </table>
 
 </div>

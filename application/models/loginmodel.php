@@ -19,15 +19,27 @@ class loginmodel extends CI_Model
    
   	//True
   }
-  public function articleList()
+  public function articleList($limit,$offset)
   {
+echo $offset;
 
     $id=$this->session->userdata('id');
    $q=$this->db->select()
             ->from('articles')
             ->where(['user_id'=>$id])
+            ->limit($limit,$offset)
             ->get();
            return $q->result();
+  }
+  public function num_rows()
+  {
+$id=$this->session->userdata('id');
+   $q=$this->db->select()
+            ->from('articles')
+            ->where(['user_id'=>$id])
+            ->get();
+           return $q->num_rows();
+
   }
   public function add_articles($array)
   {

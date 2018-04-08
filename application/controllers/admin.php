@@ -5,9 +5,20 @@ class admin extends MY_controller
   
  public function welcome()
  {
-    
-  $this->load->model('loginmodel','ar');
-  $articles=$this->ar->articleList();
+     $this->load->model('loginmodel','ar');
+  $this->load->library('pagination');
+
+  $config=[
+        'base_url' => base_url('admin/welcome'),
+        'per_page' =>2,
+        'total_rows' => $this->ar->num_rows(),
+      ];
+
+
+  $this->pagination->initialize($config);
+
+ 
+  $articles=$this->ar->articleList($config['per_page'],$this->uri->segment(3));
   $this->load->view('admin/dashboard',['articles'=>$articles]);
  }
 
