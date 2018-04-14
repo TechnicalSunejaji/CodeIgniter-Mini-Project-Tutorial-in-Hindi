@@ -26,7 +26,7 @@ $msg_class=$this->session->flashdata('msg_class')
 
 </div>
 
-
+<?php echo $this->db->last_query(); ?>
 <div class="table">
 <table>
 <thead>
@@ -43,6 +43,7 @@ $msg_class=$this->session->flashdata('msg_class')
 <?php foreach ($articles as $art): ?>
 <tr>
 	   
+
 		<td><?=  $art->article_title; ?></td>
 		<td><?=  $art->article_body; ?></td>
 		
@@ -67,11 +68,13 @@ $msg_class=$this->session->flashdata('msg_class')
    <?php endif; ?>
 </tbody>
 
-<?=  $this->pagination->create_links();   ?>
+
 
 
 </table>
 
+
+<?php  echo$this->pagination->create_links();   ?> 
 </div>
 
 

@@ -21,7 +21,7 @@ class loginmodel extends CI_Model
   }
   public function articleList($limit,$offset)
   {
-echo $offset;
+
 
     $id=$this->session->userdata('id');
    $q=$this->db->select()
@@ -29,6 +29,7 @@ echo $offset;
             ->where(['user_id'=>$id])
             ->limit($limit,$offset)
             ->get();
+           
            return $q->result();
   }
   public function num_rows()
