@@ -74,7 +74,7 @@ $msg_class=$this->session->flashdata('msg_class')
 </table>
 
 
-<?php  echo$this->pagination->create_links();   ?> 
+<?php  echo $this->pagination->create_links();   ?> 
 </div>
 
 
