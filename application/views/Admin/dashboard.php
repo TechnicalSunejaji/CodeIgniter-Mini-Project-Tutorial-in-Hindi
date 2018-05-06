@@ -46,8 +46,8 @@ $msg_class=$this->session->flashdata('msg_class')
 
 		<td><?=  $art->article_title; ?></td>
 		<td><?=  $art->article_body; ?></td>
+		<td><?=  anchor("admin/edituser/{$art->id}",'Edit',['class'=>'btn btn-default']);  ?></td>
 		
-		<td><a href="#" class="btn btn-primary">Edit</a></td>
 		<td>
         <?=
         form_open('admin/delarticles'),

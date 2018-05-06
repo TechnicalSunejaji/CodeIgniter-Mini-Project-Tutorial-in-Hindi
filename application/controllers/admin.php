@@ -65,9 +65,10 @@ class admin extends MY_controller
 
  }
  
- public function edituser()
+ public function edituser($id)
  {
-
+ // $id=$this->input->get();
+echo $id;
  }
  public function delarticles()
  {

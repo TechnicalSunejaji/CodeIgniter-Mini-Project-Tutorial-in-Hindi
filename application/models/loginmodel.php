@@ -22,11 +22,23 @@ class loginmodel extends CI_Model
   public function articleList($limit,$offset)
   {
 
+//$where="article_title='Article 2' or article_title='article one'";
+
+// $where=array(
+//   'article_title'=>'Article 2'
+//   );
+  //  $in=array(10,9,12);
 
     $id=$this->session->userdata('id');
-   $q=$this->db->select()
+   $q=$this->db->select('')
             ->from('articles')
             ->where(['user_id'=>$id])
+         //   ->like('article_title','A','none')
+           // ->where_not_in('id',$in)
+
+           // ->or_where('article_title','Article 2')
+           //->where('article_title!=','Article 2')
+           // ->Where($where)
             ->limit($limit,$offset)
             ->get();
            
