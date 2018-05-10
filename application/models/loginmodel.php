@@ -44,6 +44,15 @@ class loginmodel extends CI_Model
            
            return $q->result();
   }
+  public function find_article($articleid)
+  {
+   $q=$this->db->select(['article_title','article_body'])
+            ->where('id',$articleid)
+            ->get('articles');
+            return $q->row();
+
+
+  }
   public function num_rows()
   {
 $id=$this->session->userdata('id');

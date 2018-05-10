@@ -67,8 +67,15 @@ class admin extends MY_controller
  
  public function edituser($id)
  {
- // $id=$this->input->get();
-echo $id;
+ $this->load->model('loginmodel');
+ $article=$this->loginmodel->find_article($id);
+ $this->load->view('admin/edit_article',['article'=>$article]);
+
+ }
+ public function updatearticle()
+ {
+print_r($this->input->post());
+
  }
  public function delarticles()
  {
