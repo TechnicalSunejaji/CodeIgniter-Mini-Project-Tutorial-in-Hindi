@@ -53,6 +53,12 @@ class loginmodel extends CI_Model
 
 
   }
+  public function update_article($articleid,Array $article)
+  {
+   return $this->db->where('id',$articleid)
+                   ->update('articles',$article);
+
+  }
   public function num_rows()
   {
 $id=$this->session->userdata('id');

@@ -75,6 +75,17 @@ class admin extends MY_controller
  public function updatearticle()
  {
 print_r($this->input->post());
+$this->load->model('loginmodel');
+if($this->loginmodel->update_article())
+{
+
+}else
+{
+
+}
+
+
+
 
  }
  public function delarticles()
