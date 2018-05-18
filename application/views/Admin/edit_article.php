@@ -3,8 +3,8 @@
 <div class="container" style="margin-top:20px;">
 <h1>Edit Articles</h1>
 
- <?php echo form_open('admin/updatearticle'); ?>
- 
+ <?php echo form_open("admin/updatearticle/{$article->id} "); ?>
+<!--<?php echo form_hidden('article_id',$article->id); ?> -->
  <div class="row">
  <div class="col-lg-6">
   <div class="form-group">

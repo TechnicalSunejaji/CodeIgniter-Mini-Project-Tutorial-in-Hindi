@@ -72,20 +72,30 @@ class admin extends MY_controller
  $this->load->view('admin/edit_article',['article'=>$article]);
 
  }
- public function updatearticle()
+ public function updatearticle($article_id)
  {
-print_r($this->input->post());
-$this->load->model('loginmodel');
-if($this->loginmodel->update_article())
-{
-
-}else
-{
-
-}
-
-
-
+if($this->form_validation->run('add_article_rules'))
+  {
+      $post=$this->input->post(); 
+      //$articleid=$post['article_id'];
+      //unset($articleid);
+      $this->load->model('loginmodel','editupdate');
+      if($this->editupdate->update_article($article_id,$post))
+      {
+         $this->session->set_flashdata('msg','Article Update successfully');
+          $this->session->set_flashdata('msg_class','alert-success');
+      }
+      else
+      {
+         $this->session->set_flashdata('msg','Articles not update Please try again!!');
+         $this->session->set_flashdata('msg_class','alert-danger');
+      }
+      return redirect('admin/welcome');
+     }
+  else
+  {
+   $this->load->view('admin/edituser');
+  }
 
  }
  public function delarticles()
