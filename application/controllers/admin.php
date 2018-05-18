@@ -94,7 +94,7 @@ if($this->form_validation->run('add_article_rules'))
      }
   else
   {
-   $this->load->view('admin/edituser');
+    $this->edituser($article_id);
   }
 
  }
